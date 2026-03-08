@@ -8,6 +8,8 @@ function App() {
   // ブラウザをリロードしてもここが再評価されます
   const token = sessionStorage.getItem('kuroco_token');
   const isAuthenticated = !!token;
+console.log('Test');
+console.log(isAuthenticated);
 
   return (
     <Router>
