@@ -56,10 +56,10 @@ jobs:
         run: npm run build
       - name: Validate kuroco_front.json
         run: |
-          if [ -f "./out/kuroco_front.json" ]; then
+          if [ -f "./build/kuroco_front.json" ]; then
             echo "kuroco_front.json found"
             # JSON形式の検証
-            if jq empty ./out/kuroco_front.json; then
+            if jq empty ./build/kuroco_front.json; then
               echo "kuroco_front.json is valid JSON"
             else
               echo "Error: kuroco_front.json is not valid JSON"
@@ -70,7 +70,7 @@ jobs:
             exit 1
           fi
       - name: Zip artifact for upload
-        run: cd out && zip ../out.zip . -r
+        run: cd build && zip ../out.zip . -r
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -114,10 +114,10 @@ jobs:
         run: npm run build
       - name: Validate kuroco_front.json
         run: |
-          if [ -f "./out/kuroco_front.json" ]; then
+          if [ -f "./build/kuroco_front.json" ]; then
             echo "kuroco_front.json found"
             # JSON形式の検証
-            if jq empty ./out/kuroco_front.json; then
+            if jq empty ./build/kuroco_front.json; then
               echo "kuroco_front.json is valid JSON"
             else
               echo "Error: kuroco_front.json is not valid JSON"
@@ -128,7 +128,7 @@ jobs:
             exit 1
           fi
       - name: Zip artifact for upload
-        run: cd out && zip ../out.zip . -r
+        run: cd build && zip ../out.zip . -r
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
