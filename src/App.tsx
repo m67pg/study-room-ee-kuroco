@@ -8,6 +8,8 @@ function App() {
       <Routes>
         {/* /Login にアクセスしたら Login画面を表示 */}
         <Route path="/Login" element={<Login />} />
+
+        <Route path="/Home" element={<Home />} />
         
         {/* ルート(/)にアクセスしたら /Login にリダイレクト、またはHomeを表示 */}
         <Route path="/" element={<Navigate to="/Login" />} />
