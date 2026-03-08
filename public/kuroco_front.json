@@ -3,7 +3,8 @@
         {
           "source": "^/(?!static|favicon.ico).*",
           "destination": "/index.html"
-        ],
+        ]
+    ],
     "basic":[],
     "ip_restrictions":[]
 }
