@@ -1,14 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './Login'; // 先ほど作成したLoginコンポーネント
+import Login from './Login';
+import Home from './Home';
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* /Login にアクセスしたら Login画面を表示 */}
         <Route path="/Login" element={<Login />} />
-
         <Route path="/Home" element={<Home />} />
         
         {/* ルート(/)にアクセスしたら /Login にリダイレクト、またはHomeを表示 */}
