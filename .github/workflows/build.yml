@@ -70,7 +70,13 @@ jobs:
             exit 1
           fi
       - name: Zip artifact for upload
-        run: cd build && zip ../out.zip . -r
+        run: |
+          echo "--- Current Directory Content ---"
+          ls -R build/
+          cd build
+          zip -r ../out.zip .
+          echo "--- Zip File Content ---"
+          unzip -l ../out.zip
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -128,7 +134,13 @@ jobs:
             exit 1
           fi
       - name: Zip artifact for upload
-        run: cd build && zip ../out.zip . -r
+        run: |
+          echo "--- Current Directory Content ---"
+          ls -R build/
+          cd build
+          zip -r ../out.zip .
+          echo "--- Zip File Content ---"
+          unzip -l ../out.zip
       - name: Archive Production Artifact
         uses: actions/upload-artifact@v4
         with:
