@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Login from './Login'; // 先ほど作成したLoginコンポーネント
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* /Login にアクセスしたら Login画面を表示 */}
+        <Route path="/Login" element={<Login />} />
+        
+        {/* ルート(/)にアクセスしたら /Login にリダイレクト、またはHomeを表示 */}
+        <Route path="/" element={<Navigate to="/Login" />} />
+        
+        {/* 今後作るHOME画面用 */}
+        {/* <Route path="/Home" element={<Home />} /> */}
+      </Routes>
+    </Router>
   );
 }
 
