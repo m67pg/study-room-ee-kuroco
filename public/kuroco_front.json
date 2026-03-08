@@ -29,10 +29,7 @@
           "destination": "/ie/"
         }
     ],
-    "basic":[
-        "user:pass",
-        "user2:pass2"
-    ],
+    "basic":[],
     "ip_restrictions":[
         "111.111.111.111/32",
         "222.222.222.222/32"
